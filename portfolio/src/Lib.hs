@@ -1,6 +1,12 @@
 module Lib
-    ( someFunc
+    ( http_get
     ) where
 
-someFunc :: IO ()
-someFunc = putStrLn "someFunc"
+import Network.HTTP.Conduit (simpleHttp)
+import Data.ByteString.Lazy
+
+type URL = String
+
+http_get :: URL -> IO ByteString
+http_get url =  simpleHttp url
+
