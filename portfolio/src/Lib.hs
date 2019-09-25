@@ -8,5 +8,5 @@ import Data.ByteString.Lazy
 type URL = String
 
 http_get :: URL -> IO ByteString
-http_get url =  simpleHttp url
+http_get = simpleHttp
 
